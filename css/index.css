@@ -1,0 +1,413 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.gear {
+    position: fixed;
+    z-index: 99;
+    color: white;
+    left: 0;
+    width: 45px;
+    top: 200px;
+    background-color: #333;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+}
+.gear:hover{
+    background-color: #33333399 ;
+}
+.scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 30px;
+    height: 50px;
+    
+}
+.scroll::after {
+    content: '';
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    animation: bounce 2s linear infinite;
+}
+@keyframes bounce {
+   0%{
+    bottom: 40px;
+    opacity: 1;
+}
+50% {
+    bottom: 20px;
+    opacity: 0.5;
+}
+100% {
+    opacity: 0.1;
+    bottom: 10px;
+}
+    
+}
+/* main-title */
+.main-title{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+.main-title h2{
+    font-weight: bold;
+    font-size: 38px;
+    position: relative;
+}
+.main-title:hover h2::after{
+    width: 60px;
+}
+.main-title h2::after{
+    content: '';
+    background-color: black;
+    height: 1px;
+    width: 40px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+.main-title h2::before{
+    content: attr(data-big-letter);
+    color: #eee;
+    font-size: 32px;
+    position: absolute;
+    left: 50%;
+    top: -28px;
+    transform: translateX(-50%);
+    box-shadow: none;
+    z-index: -1;
+    font-size: 60px;
+    opacity: 0.7;
+}
+/* header + landing sec */
+.navbar{
+    border-bottom: 1px solid gray;
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+}
+
+.navbar-nav .nav-link{
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 10px;
+    letter-spacing: 0.5px;
+    transition: 0.1s;
+}
+.navbar-nav .nav-link.active{
+    color: #f25454 ;
+}
+.social i{
+    transition: 0.1s;
+}
+.navbar-nav .nav-link:hover,.social i:hover{
+    color: #f25454 ;
+}
+
+@media (max-width:768px) {
+    .navbar-collapse {
+    background-color: white;
+}
+    .navbar-nav .nav-link{
+        color: black;
+    }
+}
+.bg-1{
+    background-image: url(../imgs/slideshow-1.jpg);
+}
+.bg-2{
+    background-image: url(../imgs/slideshow-2.jpg);
+}
+.bg-3{
+    background-image: url(../imgs/slideshow-3.jpg);
+}
+.car-img{
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.car-img h1{
+    color: white;
+    font-weight: bold;
+    font-size: 65px;
+    text-align: center;
+    
+    line-height: 0.9;
+}
+.mybutton1{
+    justify-content: start;
+
+}
+.mybutton2{
+    position: absolute;
+    left: 0;
+    top: 102px;
+    margin-left: 0;
+    justify-content: start;
+    opacity: .5;
+}
+.myarrow1,.myarrow2{
+    border: 1px solid white;
+    padding: 12px 13px;
+}
+.myarrow1{
+    display: flex;
+    border-top-right-radius: 4px;
+
+}
+
+.myarrow2{
+    border-bottom-right-radius: 4px;
+}
+.myarrow1 span{
+    height: 25px;
+    width: 25px;
+}
+.myarrow2 span{
+    height: 25px;
+    width: 25px;
+}
+.myarrow2::before{
+    content: '';
+    background-color: white;
+    width: 100%;
+    height: inherit;
+}
+/* about */
+/* team */
+.team .img img{
+    border-radius: 5px;
+    width: 100%;
+    transition: 0.3s;
+}
+.team .img .layer{
+    position: absolute;
+    inset: 0;
+    background-color: rgba(242, 84, 84, 0.711);
+    opacity: 0;
+    transition: 0.3s;
+}
+.team .img .logos{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: top 0.5s 0.2s;
+    color: #fff;
+    opacity: 0;
+    cursor: pointer;
+}
+.team .img:hover .layer,.team .img:hover .logos{
+    opacity: 1;
+}
+.team .img:hover img{
+    transform: scale(1.1);
+}
+.team .col p{
+    transition: 0.3s;
+}
+.team .col:hover p{
+    color: #f25454;
+}
+.ideas .container a{
+     background-color: #f25454;
+    transition: 0.3s;
+}
+.ideas .container a:hover{
+    background-color: #f2545479;
+    cursor: pointer;
+}
+/* services */
+.services h4{
+    text-indent: -13px;
+}
+.services .col h4{
+    transition: 0.3s;
+}
+.services .col h4 i{
+    color: #f25454;
+}
+.services .col:hover h4{
+    color: #f25454;
+}
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: -30px;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 1rem;
+    margin-left: 15%;
+}
+.review .carousel-indicators [data-bs-target] {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    text-indent: 0;
+    margin-bottom: 120px;
+}
+.contact .row i{
+    color: #f25454;
+    font-size: 41px;
+    display: flex;
+    align-items: center;
+}
+.contact .row .text{
+    line-height: 0.5;
+}
+.contact .text p{
+    transition: 0.3s;
+}
+.contact .text:hover p{
+    color: #f25454;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.form-control:focus {
+
+    border-color: #f25454;
+    outline: 0;
+    box-shadow: 0 0 0 1px #f25454;
+}
+.contact .send{
+    display: flex;
+    background-color: #f25454;
+    padding: 12px 25px;
+    width: fit-content;
+    font-size: 15px;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+.contact a{
+    text-decoration: none;
+    color: white;
+    margin-left: 5px;
+}
+.contact .send i{
+    color: white!important;
+    font-size: 12px;
+
+}
+.contact .send:hover{
+    background-color: #f2545490;
+}
+.map{
+    background-color: #232323;
+    background-image: url(../imgs/dotted-map.png);
+    background-repeat: repeat-x;
+    background-size: 50% 100%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.to-up{
+    color: white;
+    background-color: #f25454;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.5;
+    transition: 0.3s;
+    z-index: 111;
+}
+.to-up a{
+    text-decoration: none;
+}
+.to-up i{
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+}
+.to-up:hover{
+    opacity: 1;
+}
+.map .icon{
+     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15%;
+}
+
+.map{
+    padding-top: 60px;
+}
+.row .sec{
+    color: white;
+}
+.map .row a{
+    color: #747474;
+    font-size: 14px;
+    transition: 0.3s;
+} 
+.map .row a:hover{
+    color: #f25454;
+}
+.map .row h5{
+    margin-bottom: 10px;
+}
+.tags .tag{
+    display: block;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    padding: 5px 10px;
+    border: 1px solid #747474;
+
+}
+.tag:hover{
+    border-color: #f25454;
+}
+/* footer */
+footer i , .rights p a{
+    transition: 0.3s;
+}
+footer i:hover, .rights p a:hover{
+    color: #f25454;
+}
+
